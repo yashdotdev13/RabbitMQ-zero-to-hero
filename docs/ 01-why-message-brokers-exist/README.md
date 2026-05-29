@@ -44,7 +44,7 @@ Order Service
 
 In a traditional microservices architecture, services often communicate directly with each other using REST APIs or gRPC.
 
-![Traditional Synchronous Communication](../../diagrams/chapter%201/01-synchronous-communication.png)
+![Traditional Synchronous Communication](../../diagrams/chapter-01/01-synchronous-communication.png)
 
 At first, this architecture looks simple and easy to implement.
 
