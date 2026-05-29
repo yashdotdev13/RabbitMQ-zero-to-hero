@@ -11,6 +11,8 @@ public class QueueConfig {
     public static final String ORDERS_QUEUE = "orders.queue";
     public static final String NOTIFICATIONS_QUEUE = "notifications.queue";
 
+    public static final String AUDIT_QUEUE = "audit.queue";
+
     @Bean
     public Queue ordersQueue() {
         return new Queue(ORDERS_QUEUE, true);
@@ -19,5 +21,10 @@ public class QueueConfig {
     @Bean
     public Queue notificationsQueue() {
         return new Queue(NOTIFICATIONS_QUEUE, true);
+    }
+
+    @Bean
+    public Queue auditQueue() {
+        return new Queue(AUDIT_QUEUE, true);
     }
 }

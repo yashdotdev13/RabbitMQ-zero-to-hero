@@ -32,4 +32,16 @@ public class ExchangeConfig {
                 .to(orderExchange)
                 .with(ORDER_ROUTING_KEY);
     }
+
+    @Bean
+    public Binding auditBinding(
+            Queue auditQueue,
+            DirectExchange orderExchange
+    ) {
+
+        return BindingBuilder
+                .bind(auditQueue)
+                .to(orderExchange)
+                .with(ORDER_ROUTING_KEY);
+    }
 }
