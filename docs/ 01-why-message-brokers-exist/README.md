@@ -44,7 +44,7 @@ Order Service
 
 In a traditional microservices architecture, services often communicate directly with each other using REST APIs or gRPC.
 
-![Traditional Synchronous Communication](../../diagrams/01-synchronous-communication.png)
+![Traditional Synchronous Communication](../../diagrams/chapter%201/01-synchronous-communication.png)
 
 At first, this architecture looks simple and easy to implement.
 
@@ -58,7 +58,7 @@ In the above architecture, the Order Service directly depends on multiple servic
 
 If the Notification Service becomes unavailable:
 
-![Tight Coupling Problem](../../diagrams/02-tight-coupling-problem.png)
+![Tight Coupling Problem](../../diagrams/chapter%201/02-tight-coupling-problem.png)
 
 ```text
 Order Service
@@ -197,7 +197,7 @@ Notification Service
 
 We introduce RabbitMQ:
 
-![RabbitMQ Solution](../../diagrams/03-rabbitmq-solution.png)
+![RabbitMQ Solution](../../diagrams/chapter%201/03-rabbitmq-solution.png)
 
 ```text
 Order Service
