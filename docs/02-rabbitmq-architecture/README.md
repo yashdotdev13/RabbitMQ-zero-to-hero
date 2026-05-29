@@ -304,7 +304,7 @@ This allows multiple applications to share the same RabbitMQ server safely.
 
 # Complete RabbitMQ Architecture
 
-![Complete RabbitMQ Architecture](../../diagrams/chapter-02/complete-rabbitmq-architecture.png)
+![Complete RabbitMQ Architecture](../../diagrams/chapter-02/05-complete-rabbitmq-architecture.png)
 
 Now everything comes together.
 
