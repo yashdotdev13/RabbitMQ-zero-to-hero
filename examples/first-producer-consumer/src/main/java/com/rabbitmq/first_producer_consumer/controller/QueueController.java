@@ -40,4 +40,16 @@ public class QueueController {
         );
         return "Order Update Published";
     }
+
+
+    @PostMapping("/orders/cancel")
+    public String cancelOrder(
+            @RequestParam String message
+    ) {
+
+        producer.sendOrderCancelledMessage(
+                message
+        );
+        return "Order Cancelled Event Published";
+    }
 }

@@ -15,6 +15,8 @@ public class QueueConfig {
 
     public static final String UPDATES_QUEUE = "updates.queue";
 
+    public static final String CANCELLED_QUEUE = "cancelled-queue";
+
     @Bean
     public Queue ordersQueue() {
         return new Queue(ORDERS_QUEUE, true);
@@ -33,5 +35,13 @@ public class QueueConfig {
     @Bean
     public Queue updatesQueue() {
         return new Queue(UPDATES_QUEUE, true);
+    }
+
+    @Bean
+    public Queue cancelledQueue() {
+        return new Queue(
+                CANCELLED_QUEUE,
+                true
+        );
     }
 }

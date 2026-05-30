@@ -53,4 +53,21 @@ public class QueueProducer {
                 "Order Update Sent : " + message
         );
     }
+
+
+    public void sendOrderCancelledMessage(
+            String message
+    ) {
+
+        rabbitTemplate.convertAndSend(
+                ExchangeConfig.ORDER_EXCHANGE,
+                ExchangeConfig.ORDER_CANCELLED_KEY,
+                message
+        );
+
+        System.out.println(
+                "Order Cancelled Event Sent : "
+                        + message
+        );
+    }
 }

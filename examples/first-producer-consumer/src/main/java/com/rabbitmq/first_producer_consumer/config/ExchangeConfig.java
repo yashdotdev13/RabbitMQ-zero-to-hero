@@ -14,6 +14,8 @@ public class ExchangeConfig {
 
     public static final String ORDER_UPDATED_KEY = "order.updated";
 
+    public static final String ORDER_CANCELLED_KEY= "order.cancelled";
+
     @Bean
     public DirectExchange orderExchange() {
         return new DirectExchange(
@@ -57,5 +59,17 @@ public class ExchangeConfig {
                 .bind(updatesQueue)
                 .to(orderExchange)
                 .with(ORDER_UPDATED_KEY);
+    }
+
+    @Bean
+    public Binding cancelledBinding(
+            Queue cancelledQueue,
+            DirectExchange orderExchange
+    ) {
+
+        return BindingBuilder
+                .bind(cancelledQueue)
+                .to(orderExchange)
+                .with(ORDER_CANCELLED_KEY);
     }
 }
