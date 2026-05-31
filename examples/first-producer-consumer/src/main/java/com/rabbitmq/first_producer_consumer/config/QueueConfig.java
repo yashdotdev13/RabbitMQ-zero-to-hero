@@ -21,6 +21,12 @@ public class QueueConfig {
     public static final String SMS_QUEUE = "sms.queue";
     public static final String ANALYTICS_QUEUE = "analytics.queue";
 
+    public static final String ORDER_EVENTS_QUEUE =
+            "order-events.queue";
+
+    public static final String PAYMENT_EVENTS_QUEUE =
+            "payment-events.queue";
+
     @Bean
     public Queue ordersQueue() {
         return new Queue(ORDERS_QUEUE, true);
@@ -45,6 +51,22 @@ public class QueueConfig {
     public Queue cancelledQueue() {
         return new Queue(
                 CANCELLED_QUEUE,
+                true
+        );
+    }
+
+    @Bean
+    public Queue orderEventsQueue() {
+        return new Queue(
+                ORDER_EVENTS_QUEUE,
+                true
+        );
+    }
+
+    @Bean
+    public Queue paymentEventsQueue() {
+        return new Queue(
+                PAYMENT_EVENTS_QUEUE,
                 true
         );
     }
