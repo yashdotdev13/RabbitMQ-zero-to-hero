@@ -58,4 +58,29 @@ public class MessageController {
 
         return "Payment Failed Event Published Successfully";
     }
+
+
+    @PostMapping("/headers/finance")
+    public String publishFinanceMessage(
+            @RequestParam String message
+    ) {
+
+        producer.publishFinanceMessage(
+                message
+        );
+
+        return "Finance Message Published Successfully";
+    }
+
+    @PostMapping("/headers/support")
+    public String publishSupportMessage(
+            @RequestParam String message
+    ) {
+
+        producer.publishSupportMessage(
+                message
+        );
+
+        return "Support Message Published Successfully";
+    }
 }

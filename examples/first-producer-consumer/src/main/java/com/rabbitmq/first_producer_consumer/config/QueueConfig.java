@@ -27,6 +27,12 @@ public class QueueConfig {
     public static final String PAYMENT_EVENTS_QUEUE =
             "payment-events.queue";
 
+    public static final String FINANCE_QUEUE =
+            "finance.queue";
+
+    public static final String SUPPORT_QUEUE =
+            "support.queue";
+
     @Bean
     public Queue ordersQueue() {
         return new Queue(ORDERS_QUEUE, true);
@@ -84,5 +90,24 @@ public class QueueConfig {
     @Bean
     public Queue analyticsQueue() {
         return new Queue(ANALYTICS_QUEUE, true);
+    }
+
+
+    @Bean
+    public Queue financeQueue() {
+
+        return new Queue(
+                FINANCE_QUEUE,
+                true
+        );
+    }
+
+    @Bean
+    public Queue supportQueue() {
+
+        return new Queue(
+                SUPPORT_QUEUE,
+                true
+        );
     }
 }

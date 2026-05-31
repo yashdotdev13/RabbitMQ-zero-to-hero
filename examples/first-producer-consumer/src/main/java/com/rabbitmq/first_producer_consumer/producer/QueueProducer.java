@@ -1,10 +1,7 @@
 package com.rabbitmq.first_producer_consumer.producer;
 
 
-import com.rabbitmq.first_producer_consumer.config.ExchangeConfig;
-import com.rabbitmq.first_producer_consumer.config.FanoutExchangeConfig;
-import com.rabbitmq.first_producer_consumer.config.QueueConfig;
-import com.rabbitmq.first_producer_consumer.config.TopicExchangeConfig;
+import com.rabbitmq.first_producer_consumer.config.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
@@ -131,6 +128,72 @@ public class QueueProducer {
                 TopicExchangeConfig.BUSINESS_TOPIC_EXCHANGE,
                 "payment.failed",
                 message
+        );
+    }
+
+
+    public void publishFinanceMessage(
+            String message
+    ) {
+
+        rabbitTemplate.convertAndSend(
+                HeadersExchangeConfig.HEADERS_EXCHANGE,
+                "",
+                message,
+                msg -> {
+
+                    msg.getMessageProperties()
+                            .setHeader(
+                                    "department",
+                                    "finance"
+                            );
+
+                    msg.getMessageProperties()
+                            .setHeader(
+                                    "priority",
+                                    "high"
+                            );
+
+                    return msg;
+                }
+        );
+
+        System.out.println(
+                "Finance Message Sent : "
+                        + message
+        );
+    }
+
+
+    public void publishSupportMessage(
+            String message
+    ) {
+
+        rabbitTemplate.convertAndSend(
+                HeadersExchangeConfig.HEADERS_EXCHANGE,
+                "",
+                message,
+                msg -> {
+
+                    msg.getMessageProperties()
+                            .setHeader(
+                                    "department",
+                                    "support"
+                            );
+
+                    msg.getMessageProperties()
+                            .setHeader(
+                                    "priority",
+                                    "low"
+                            );
+
+                    return msg;
+                }
+        );
+
+        System.out.println(
+                "Support Message Sent : "
+                        + message
         );
     }
 }
