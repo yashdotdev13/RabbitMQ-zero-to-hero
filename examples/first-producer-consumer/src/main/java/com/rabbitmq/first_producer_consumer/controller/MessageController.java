@@ -83,4 +83,16 @@ public class MessageController {
 
         return "Support Message Published Successfully";
     }
+
+    @PostMapping("/ack")
+    public String publishAckMessage(
+            @RequestParam String message
+    ) {
+
+        messageProducer.publishAckMessage(
+                message
+        );
+
+        return "Ack Demo Message Published";
+    }
 }
