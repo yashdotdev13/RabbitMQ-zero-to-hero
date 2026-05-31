@@ -17,6 +17,10 @@ public class QueueConfig {
 
     public static final String CANCELLED_QUEUE = "cancelled-queue";
 
+    public static final String EMAIL_QUEUE = "email.queue";
+    public static final String SMS_QUEUE = "sms.queue";
+    public static final String ANALYTICS_QUEUE = "analytics.queue";
+
     @Bean
     public Queue ordersQueue() {
         return new Queue(ORDERS_QUEUE, true);
@@ -43,5 +47,20 @@ public class QueueConfig {
                 CANCELLED_QUEUE,
                 true
         );
+    }
+
+    @Bean
+    public Queue emailQueue() {
+        return new Queue(EMAIL_QUEUE, true);
+    }
+
+    @Bean
+    public Queue smsQueue() {
+        return new Queue(SMS_QUEUE, true);
+    }
+
+    @Bean
+    public Queue analyticsQueue() {
+        return new Queue(ANALYTICS_QUEUE, true);
     }
 }

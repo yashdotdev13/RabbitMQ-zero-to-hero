@@ -25,6 +25,7 @@ public class ExchangeConfig {
         );
     }
 
+
     @Bean
     public Binding orderBinding(
             Queue ordersQueue,
