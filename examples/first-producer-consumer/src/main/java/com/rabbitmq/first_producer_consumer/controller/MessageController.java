@@ -105,4 +105,16 @@ public class MessageController {
         );
         return "Manual Ack Message Published";
     }
+
+    @PostMapping("/requeue")
+    public String sendRequeueMessage(
+            @RequestParam String message
+    ) {
+
+        messageProducer.publishManualAckMessage(
+                message
+        );
+
+        return "Message Published";
+    }
 }
