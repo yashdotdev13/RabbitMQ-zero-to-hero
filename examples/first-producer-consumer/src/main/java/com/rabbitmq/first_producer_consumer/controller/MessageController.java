@@ -1,5 +1,6 @@
 package com.rabbitmq.first_producer_consumer.controller;
 
+import com.rabbitmq.first_producer_consumer.producer.DlqProducer;
 import com.rabbitmq.first_producer_consumer.producer.MessageProducer;
 import com.rabbitmq.first_producer_consumer.producer.QueueProducer;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ public class MessageController {
 
     private final MessageProducer messageProducer;
     private final QueueProducer producer;
+    private final DlqProducer dlqProducer;
 
     @PostMapping
     public String sendMessage(@RequestParam String message) {
@@ -116,5 +118,17 @@ public class MessageController {
         );
 
         return "Message Published";
+    }
+
+    @PostMapping("/dlq")
+    public String sendDlqMessage(
+            @RequestParam String message
+    ) {
+
+        dlqProducer.publishMessage(
+                message
+        );
+
+        return "DLQ Message Published";
     }
 }
