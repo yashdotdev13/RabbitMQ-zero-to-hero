@@ -12,17 +12,21 @@ public class OrderProducer {
 
     private final RabbitTemplate rabbitTemplate;
 
-    public void publishOrderCreatedEvent(OrderCreatedEvent event) {
+    public void publishOrderCreatedEvent(
+            OrderCreatedEvent event
+    ) {
 
         rabbitTemplate.convertAndSend(
                 RabbitMQConfig.ORDER_EXCHANGE,
                 RabbitMQConfig.ORDER_ROUTING_KEY,
-                "ORDER_CREATED"
+                event
         );
 
+        System.out.println();
         System.out.println("================================");
         System.out.println("ORDER CREATED EVENT PUBLISHED");
         System.out.println(event);
         System.out.println("================================");
+        System.out.println();
     }
 }
