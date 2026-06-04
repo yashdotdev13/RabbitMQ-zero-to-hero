@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/examples/first-producer-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/projects/ecommerce-event-driven-system/order-service/pom.xml" />
       </list>
     </option>
   </component>

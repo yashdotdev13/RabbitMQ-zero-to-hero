@@ -1,6 +1,5 @@
 package com.rabbitmq.order_service.config;
 
-
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
@@ -16,7 +15,7 @@ public class RabbitMQConfig {
     public static final String ORDER_ROUTING_KEY = "order.created";
 
     @Bean
-    public Queue orderQueue(){
+    public Queue orderQueue() {
         return new Queue(ORDER_QUEUE);
     }
 
