@@ -1,4 +1,4 @@
-package com.rabbitmq.notification_service.dto;
+package com.rabbitmq.payment_service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
