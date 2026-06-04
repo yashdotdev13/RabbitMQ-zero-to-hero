@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/examples/first-producer-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/projects/ecommerce-event-driven-system/order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/projects/ecommerce-event-driven-system/inventory-service/pom.xml" />
+        <option value="$PROJECT_DIR$/projects/ecommerce-event-driven-system/payment-service/pom.xml" />
+        <option value="$PROJECT_DIR$/projects/ecommerce-event-driven-system/notification-service/pom.xml" />
       </list>
     </option>
   </component>
