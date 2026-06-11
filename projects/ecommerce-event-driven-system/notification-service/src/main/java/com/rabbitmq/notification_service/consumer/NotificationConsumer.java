@@ -16,7 +16,6 @@ public class NotificationConsumer {
     ) {
 
         System.out.println();
-        System.out.println("================================");
         System.out.println("NOTIFICATION RECEIVED");
         System.out.println("Order Id : " + event.getOrderId());
         System.out.println("Product  : " + event.getProductName());
@@ -25,7 +24,6 @@ public class NotificationConsumer {
         System.out.println("EMAIL SENT");
         System.out.println("SMS SENT");
         System.out.println("ORDER CONFIRMATION SENT");
-        System.out.println("================================");
         System.out.println();
     }
 }
