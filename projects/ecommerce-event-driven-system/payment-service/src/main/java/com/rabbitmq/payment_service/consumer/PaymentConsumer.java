@@ -22,14 +22,12 @@ public class PaymentConsumer {
     ) {
 
         System.out.println();
-        System.out.println("================================");
         System.out.println("PAYMENT RECEIVED");
         System.out.println("Order Id : " + event.getOrderId());
         System.out.println("Product  : " + event.getProductName());
         System.out.println("Amount   : " + event.getAmount());
         System.out.println();
         System.out.println("Payment Processed Successfully");
-        System.out.println("================================");
         System.out.println();
 
         PaymentCompletedEvent completedEvent =
